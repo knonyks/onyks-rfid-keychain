@@ -66,21 +66,32 @@ with open(filename, mode="a", newline="", encoding="utf-8") as plik:
             writer.writerow(new_row)
             print("saved!")
 
-	elif command == "read":
-	    
-	
+
+        elif command == "read":
+            uid = read_uid_125()
+            found = False
+            for row in data[1:]:
+                if row[0] == uid:
+                    print("Tag found:")
+                    print(tabulate([row], headers=data[0], tablefmt="grid"))
+                    found = True
+                    break
+            if not found:
+                print(f"UID {uid} not found in saved data")
+
+
         elif command == "print":
             print(tabulate(data[1:], headers=data[0], tablefmt="grid"))
 
         elif command == "help":
-            print("add - add new keychain \n print - print a table of all added keychains \n exit - ends program")
+            print(" add - add new keychain \n print - print a table of all added keychains \n exit - ends program \n read - rfid tag")
 
 
         elif command == "exit":
             break
 
         else:
-            print("invalid command \n use help to see all available commands")
+            print(" invalid command \n use help to see all available commands")
 
 
 
