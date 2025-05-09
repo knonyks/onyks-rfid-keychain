@@ -53,7 +53,7 @@ with open(filename, mode="a", newline="", encoding="utf-8") as plik:
             name = input("enter your name: ")
             surname = input("enter you surname: ")
             email = input("enter your email: ")
-            pnumber = input("enter your phone number")
+            pnumber = input("enter your phone number: ")
 
             uid1 = read_uid_125()
             print(f"125KHz UID: {uid1}")
@@ -66,6 +66,9 @@ with open(filename, mode="a", newline="", encoding="utf-8") as plik:
             writer.writerow(new_row)
             print("saved!")
 
+	elif command == "read":
+	    
+	
         elif command == "print":
             print(tabulate(data[1:], headers=data[0], tablefmt="grid"))
 
