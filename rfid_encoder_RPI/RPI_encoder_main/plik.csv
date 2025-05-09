@@ -1,5 +1,3 @@
-UID_125KHz,UID_13.56MHz,Imię,Nazwisko,email
-5A08D3EE6B6E93,809A7F95E3E706,maciej,zaleksi,jajko1@
-49062622636CDF,605F39A57F7189,test,test,2137@gmail.com
-8BF1E4B6BCAB60,9242C236103805,maciek,paprocki,test@orange.pl
-32B19229CDDC27,F49F022E142266,karol,stanki,karol04@gmail.com
+UID_125KHz,UID_13.56MHz,Name,Surname,Email,Phone
+5300DDD3B9E4,926C5A0566EB79,maciej,zaleski,macmysz1@gmail.com,555666777
+53005F9E58CA,269F96651BEA69,karol,kowalski,email@gmail.com,777888999

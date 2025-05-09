@@ -2,6 +2,7 @@ import csv
 import sys
 import serial
 import os
+
 from tabulate import tabulate
 
 import random
