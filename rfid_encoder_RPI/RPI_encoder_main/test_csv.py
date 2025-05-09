@@ -67,6 +67,31 @@ with open(filename, mode="a", newline="", encoding="utf-8") as plik:
             print("saved!")
 
 
+        elif command == "delete":
+            uid = read_uid_125()
+            found = False
+
+            for i, row in enumerate(data[1:], start=1):
+                if row[0] == uid:
+                    print("Tag found:")
+                    print(tabulate([row], headers=data[0], tablefmt="grid"))
+                    confirm = input("Are you sure to delet? (yes/no): ").strip().lower()
+                    if confirm == "yes":
+                        del data[i]  # delet row
+                        # save file
+                        with open(filename, mode="w", newline="", encoding="utf-8") as f:
+                            writer = csv.writer(f, delimiter=',')
+                            writer.writerows(data)
+                        print("Tag deleted")
+                    else:
+                        print("deletion canceled")
+                    found = True
+                    break
+
+            if not found:
+                print(f"UID {uid} not found in saved data")
+
+
         elif command == "read":
             uid = read_uid_125()
             found = False
